@@ -12,7 +12,7 @@ const {
 const User = require('../../models/User');
 
 // @route  GET api/auth
-// @desc   Get auth user
+// @desc   Get auth user // Test route
 // access  Private
 router.get('/', auth, async (req, res) => {
     try {
