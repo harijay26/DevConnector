@@ -250,6 +250,10 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
         post.comments.splice(removeIndex, 1);
 
+        /* post.comments = post.comments.filter(
+            comment => comment.id !== req.params.comment_id
+        ); */
+
         await post.save();
 
         res.json(post.comments);
