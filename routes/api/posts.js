@@ -64,7 +64,7 @@ router.get('/', auth, async (req, res) => {
 
 
 // @route   GET api/posts/:id
-// @desc    Get all posts
+// @desc    Get post by ID
 // @access  Private
 router.get('/:id', auth, async (req, res) => {
     try {
@@ -79,6 +79,7 @@ router.get('/:id', auth, async (req, res) => {
         res.json(post);
     } catch (err) {
         console.error(err.message);
+        // Checks for ID length validity
         if (err.kind === 'ObjectId') {
             return res.status(404).json({
                 msg: 'Post not found'
@@ -115,6 +116,7 @@ router.delete('/:id', auth, async (req, res) => {
         });
     } catch (err) {
         console.error(err.message);
+         // Checks for ID length validity
         if (err.kind === 'ObjectId') {
             return res.status(404).json({
                 msg: 'Post not found'

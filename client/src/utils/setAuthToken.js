@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const setAuthToken = token => {
 
-    // Checks if there is token in localStorage
+    // Checks if the user token is stored/valid in the localStorage
     if (token) {
         axios.defaults.headers.common['x-auth-token'] = token;
     } else {

@@ -37,7 +37,7 @@ router.get('/me', auth, async (req, res) => {
 });
 
 
-// @route   GET api/profile
+// @route   POST api/profile
 // @desc    Create or update user profile
 // @access  Private
 router.post('/',
@@ -56,6 +56,7 @@ router.post('/',
             });
         }
 
+        // Destructuring
         const {
             company,
             location,
@@ -206,6 +207,7 @@ router.put('/experience', [auth, [
             });
         }
 
+        // Destructuring
         const {
             title,
             company,
@@ -224,7 +226,7 @@ router.put('/experience', [auth, [
             to,
             current,
             description
-        }
+        };
 
         try {
             const profile = await Profile.findOne({
@@ -284,6 +286,7 @@ router.put('/education', [auth, [
             });
         }
 
+        // Destructuring
         const {
             school,
             degree,

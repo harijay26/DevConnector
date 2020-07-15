@@ -18,7 +18,7 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: 
         <Fragment>
             <h1 className="large text-primary">Dashboard</h1>
             <p className="lead">
-            <i className="fa fa-user"></i> Welcome { user && user.name }
+                <i className="fa fa-user"></i> Welcome { user && user.name }
             </p>
             {profile !== null ? (
                 <Fragment>

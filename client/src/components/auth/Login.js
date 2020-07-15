@@ -13,6 +13,7 @@ const Login = ({ login, isAuthenticated }) => {
             password: ''
         });
 
+        // Destructuring
         const { email, password } = formData;
 
         const onChange = (e) => 

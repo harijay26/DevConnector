@@ -12,7 +12,7 @@ const {
 const User = require('../../models/User');
 
 // @route  GET api/auth
-// @desc   Get auth user // Test route
+// @desc   Get auth user // Get user by token
 // access  Private
 router.get('/', auth, async (req, res) => {
     try {
@@ -42,6 +42,7 @@ router.post('/',
             });
         }
 
+        // Destructuring
         const {
             email,
             password
@@ -81,7 +82,7 @@ router.post('/',
             jwt.sign(
                 payload,
                 config.get('jwtSecret'), {
-                    expiresIn: 360000
+                    expiresIn: 3600
                 },
                 (err, token) => {
                     if (err) throw err;

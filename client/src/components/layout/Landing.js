@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 
 const Landing = ({ isAuthenticated }) => {
 
+    // Checks if user logged in the refrain from landing page
     if(isAuthenticated) {
        return <Redirect to='/dashboard' />
-    }
+    };
 
     return (
         <section className="landing">

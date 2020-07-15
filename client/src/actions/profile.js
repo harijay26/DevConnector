@@ -116,6 +116,7 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 
         dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
+        // Redirects to dashboard
         if(!edit) {
             history.push('/dashboard');
         }
@@ -157,12 +158,14 @@ export const addExperience = (formData, history) => async dispatch => {
 
         dispatch(setAlert('Experience Added', 'success'));
         
+        // Redirects to dashboard
         history.push('/dashboard');
         
         
     } catch (err) {
         const errors = err.response.data.errors;
-
+        
+        
         if (errors) {
             errors.forEach(error => dispatch(
                 setAlert(error.msg, 'danger')
@@ -198,12 +201,14 @@ export const addEducation = (formData, history) => async dispatch => {
 
         dispatch(setAlert('Education Added', 'success'));
         
+        // Redirects to dashboard
         history.push('/dashboard');
         
         
     } catch (err) {
         const errors = err.response.data.errors;
 
+        // Loops through the errors in the server
         if (errors) {
             errors.forEach(error => dispatch(
                 setAlert(error.msg, 'danger')
@@ -219,6 +224,7 @@ export const addEducation = (formData, history) => async dispatch => {
         });
     }
 };
+
 
 // Delete experience
 export const deleteExperience = (id) => async (dispatch) => {
